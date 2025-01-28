@@ -14,6 +14,7 @@ int main() {
     
     //Entrada de dados
     printf("Bem-Vindo ao jogo Trunfo!\n");
+    printf("Para melhorar as informações utilize _ no lugar de espacos");
     printf("Informe o estado:\n");
     scanf("%s", &estado);
 
