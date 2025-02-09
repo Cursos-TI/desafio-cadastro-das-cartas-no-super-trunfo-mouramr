@@ -3,7 +3,7 @@
 /*  
     Desafio Super Trunfo - Países
     Faremos o cadastro de Duas cidades para simplicificar o código e comparação entre elas.
-    20250109-Alteracao para versao melhorada do código C que aprendi usando Operador Ternário
+    20250109-Alteracao para versao melhorada do código C que aprendi usando if/else como no PHP
 */
 
 
@@ -104,46 +104,67 @@ int main() {
     printf("\nComparando as cidades:\n");
 
     // População
-    int vencedor_populacao = (populacao1 > populacao2) * 1 + (populacao2 > populacao1) * 2;
-    printf("População: %s vence com %d habitantes\n",
-            (vencedor_populacao == 1) ? codigo1 : codigo2,
-            (vencedor_populacao == 1) ? populacao1 : populacao2);
+    if (populacao1 > populacao2) {
+        printf("População: %s vence com %d habitantes\n", codigo1, populacao1);
+    } else if (populacao2 > populacao1) {
+        printf("População: %s vence com %d habitantes\n", codigo2, populacao2);
+    } else {
+        printf("População: Empate com %d habitantes\n", populacao1);
+    }
 
     // Área
-    int vencedor_area = (area1 > area2) * 1 + (area2 > area1) * 2;
-    printf("Área: %s vence com %.2f km²\n",
-            (vencedor_area == 1) ? codigo1 : codigo2,
-            (vencedor_area == 1) ? area1 : area2);
+    if (area1 > area2) {
+        printf("Área: %s vence com %.2f km²\n", codigo1, area1);
+    } else if (area2 > area1) {
+        printf("Área: %s vence com %.2f km²\n", codigo2, area2);
+    } else {
+        printf("Área: Empate com %.2f km²\n", area1);
+    }
 
     // PIB
-    int vencedor_pib = (pib1 > pib2) * 1 + (pib2 > pib1) * 2;
-    printf("PIB: %s vence com %.2f milhões\n",
-            (vencedor_pib == 1) ? codigo1 : codigo2,
-            (vencedor_pib == 1) ? pib1 : pib2);
+    if (pib1 > pib2) {
+        printf("PIB: %s vence com %.2f milhões\n", codigo1, pib1);
+    } else if (pib2 > pib1) {
+        printf("PIB: %s vence com %.2f milhões\n", codigo2, pib2);
+    } else {
+        printf("PIB: Empate com %.2f milhões\n", pib1);
+    }
 
     // Pontos Turísticos
-    int vencedor_pontos = (pontos_turisticos1 > pontos_turisticos2) * 1 + (pontos_turisticos2 > pontos_turisticos1) * 2;
-    printf("Pontos Turísticos: %s vence com %d pontos\n",
-            (vencedor_pontos == 1) ? codigo1 : codigo2,
-            (vencedor_pontos == 1) ? pontos_turisticos1 : pontos_turisticos2);
+    if (pontos_turisticos1 > pontos_turisticos2) {
+        printf("Pontos Turísticos: %s vence com %d pontos\n", codigo1, pontos_turisticos1);
+    } else if (pontos_turisticos2 > pontos_turisticos1) {
+        printf("Pontos Turísticos: %s vence com %d pontos\n", codigo2, pontos_turisticos2);
+    } else {
+        printf("Pontos Turísticos: Empate com %d pontos\n", pontos_turisticos1);
+    }
 
     // Densidade Populacional (menor valor vence)
-    int vencedor_densidade = (densidade1 < densidade2) * 1 + (densidade2 < densidade1) * 2;
-    printf("Densidade Populacional: %s vence com %.2f hab/km²\n",
-            (vencedor_densidade == 1) ? codigo1 : codigo2,
-            (vencedor_densidade == 1) ? densidade1 : densidade2);
+    if (densidade1 < densidade2) {
+        printf("Densidade Populacional: %s vence com %.2f hab/km²\n", codigo1, densidade1);
+    } else if (densidade2 < densidade1) {
+        printf("Densidade Populacional: %s vence com %.2f hab/km²\n", codigo2, densidade2);
+    } else {
+        printf("Densidade Populacional: Empate com %.2f hab/km²\n", densidade1);
+    }
 
     // PIB per Capita
-    int vencedor_pib_per_capita = (pib_per_capita1 > pib_per_capita2) * 1 + (pib_per_capita2 > pib_per_capita1) * 2;
-    printf("PIB per Capita: %s vence com R$ %.2f\n",
-            (vencedor_pib_per_capita == 1) ? codigo1 : codigo2,
-            (vencedor_pib_per_capita == 1) ? pib_per_capita1 : pib_per_capita2);
+    if (pib_per_capita1 > pib_per_capita2) {
+        printf("PIB per Capita: %s vence com R$ %.2f\n", codigo1, pib_per_capita1);
+    } else if (pib_per_capita2 > pib_per_capita1) {
+        printf("PIB per Capita: %s vence com R$ %.2f\n", codigo2, pib_per_capita2);
+    } else {
+        printf("PIB per Capita: Empate com R$ %.2f\n", pib_per_capita1);
+    }
 
     // Poder
-    int vencedor_poder = (poder1 > poder2) * 1 + (poder2 > poder1) * 2;
-    printf("Poder: %s vence com %.2f\n",
-            (vencedor_poder == 1) ? codigo1 : codigo2,
-            (vencedor_poder == 1) ? poder1 : poder2);
+    if (poder1 > poder2) {
+        printf("Poder: %s vence com %.2f\n", codigo1, poder1);
+    } else if (poder2 > poder1) {
+        printf("Poder: %s vence com %.2f\n", codigo2, poder2);
+    } else {
+        printf("Poder: Empate com %.2f\n", poder1);
+    }
 
     return 0;
 }
